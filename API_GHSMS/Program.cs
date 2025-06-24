@@ -75,11 +75,13 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API GHSMS v1");
+    c.RoutePrefix = ""; // Truy cập Swagger tại "/"
+});
+
 
 app.UseHttpsRedirection();
 
