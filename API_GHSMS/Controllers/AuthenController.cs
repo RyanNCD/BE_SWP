@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Repository.DTO;
 using Service.Interface;
-
 namespace API_GHSMS.Controllers
 {
     [Route("api/[controller]")]
